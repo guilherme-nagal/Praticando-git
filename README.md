@@ -54,3 +54,12 @@ git revert <hash_commit>
 - Mostrando qual parte do códgio apresentou conflito, então para resolver basta apagar o código que não se deseja e manter o que se deseja e então realizar o commit.
 
 7° Desafio) Criar um gitignore.
+- O arquivo `.gitignore` serve para não adicionar alguns arquivos no commit. Existem alguns arquivos que não queremos que sejam commitados, como por exemplo alguns arquivos de configurações.
+- Então para esse desafio iremos criar um arquivo `config` e iremos adiciona-lo ao arquivo `.gitignore`, e também iremos modificar o arquivo `index.html`.
+- Agora iremos dar um commit.
+```
+git add .
+git commit -m "Atualizando o arquivo index.html sem adicionar o arquivo de configuração"
+git push origin main
+```
+  - Dessa forma estaremos adicionando todos os arquivos ao commit e commitando com uma mensagem e depois enviando para o repositório remoto.
