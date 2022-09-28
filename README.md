@@ -26,7 +26,7 @@ git clone <url_repositorio>
 - Após fazer isso aparecerá uma notificação em "Source Control", basta clicar nessa aba, adicionar um comentário e realizar o commit.
 ![2](https://user-images.githubusercontent.com/64446302/192879024-9b7c2ac8-bf34-4c8a-b97f-80709df124ad.png)
 
-5° Desafio) Revertendo um commit.
+### 5° Desafio) Revertendo um commit.
 - Para isso iremos realizar um commit com algum erro, tirando alguma tag de fechamento de "div".
 - Após ser feita essa inserção de um erro iremos querer reverte-lo, para isso temos que pegar o histórico de commits feitos. Então iremos usar o seguinte comando:
 ```
@@ -39,7 +39,7 @@ git revert <hash_commit>
 ```
 - Dessa forma revertendo o commit informado.
 
-6° Desafio) Resolvendo um conflito.
+### 6° Desafio) Resolvendo um conflito.
 - Para isso simularemos um conflito no código, então pelo github iremos alterar o terceiro filme do arquivo index.html e será feito o commit, e pelo VScode iremos realizar uma alteração diferente no terceiro filme também e realizar o commit.
 - Dessa forma terá um conflito no código, então daremos um pull no código para resolve-lo.
 - Para fazer o pull podemos utilizar o "Source Control" do VScode ou pelo terminal.
@@ -53,7 +53,7 @@ git revert <hash_commit>
 ![1](https://user-images.githubusercontent.com/64446302/192882113-e7c2f312-d615-48ee-8052-9ca875d84c6f.png)
 - Mostrando qual parte do códgio apresentou conflito, então para resolver basta apagar o código que não se deseja e manter o que se deseja e então realizar o commit.
 
-7° Desafio) Criar um gitignore.
+### 7° Desafio) Criar um gitignore.
 - O arquivo `.gitignore` serve para não adicionar alguns arquivos no commit. Existem alguns arquivos que não queremos que sejam commitados, como por exemplo alguns arquivos de configurações.
 - Então para esse desafio iremos criar um arquivo `config` e iremos adiciona-lo ao arquivo `.gitignore`, e também iremos modificar o arquivo `index.html`.
 - Agora iremos dar um commit.
@@ -63,3 +63,33 @@ git commit -m "Atualizando o arquivo index.html sem adicionar o arquivo de confi
 git push origin main
 ```
   - Dessa forma estaremos adicionando todos os arquivos ao commit e commitando com uma mensagem e depois enviando para o repositório remoto.
+- Se olharmos o repositório no github iremos ver que não foi adicionado o arquivo de configuração e o arquivo `index.html` foi atualziado.
+
+### 8° Desafio) Criar uma branch de desenvilvimento.
+- Branchs serve para temos diferentes versões do código, dessa forma conseguimos trabalhar no código sem afetar o código em produção.
+- Para cirar uma branch podemos digitar um dos seguintes códigos:
+```
+git branch desenvilvimento
+```
+  - Criando a bransh de desenvolvimento porém continuará na branch main
+  - Para se mudar para ela devemos digitar o comando:
+    ```
+    git checkout desenvolvimento
+    ```
+```
+git checkout -b desenvolvimento
+```
+  - Criando a branch de desenvolvimento e mudando para ela.
+
+### 9° Desafio) Fazer um merge.
+- Para fazer um merge primeiro iremos, na branch de desenvolvimento, modificar o arquivo de `index.html` adicionando um quarto filme. E então faremos um commit.
+- Agora se mudarmos para a branch main veremos que essa alteração não está nessa bransh, pondo ver difernetes versões do código.
+```
+git checkout main
+```
+- Após isso faremos um merge. Para fazer o merge primeiro entraremos na branhch main e então fazer o merge.
+```
+git merge desenvolvimento
+```
+- Quando fizermos isso vermos que o código que o código da branch desenvolvimento está na branch main.
+- Por fim basta dar um push.
