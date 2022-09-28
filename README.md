@@ -49,4 +49,8 @@ git revert <hash_commit>
   ```
   git pull origin main
   ```
-- Após ter dado um pull podemos olhar no arquivo index.html algo semelhante como a imagem a baixo
+- Após ter dado um pull podemos olhar no arquivo index.html algo semelhante como a imagem a baixo.
+![1](https://user-images.githubusercontent.com/64446302/192882113-e7c2f312-d615-48ee-8052-9ca875d84c6f.png)
+- Mostrando qual parte do códgio apresentou conflito, então para resolver basta apagar o código que não se deseja e manter o que se deseja e então realizar o commit.
+
+7° Desafio) Criar um gitignore.
