@@ -80,6 +80,10 @@ git branch desenvilvimento
 git checkout -b desenvolvimento
 ```
   - Criando a branch de desenvolvimento e mudando para ela.
+- Por fim iremos envia-la para o repositório remoto.
+```
+git push origin desenvolvimento
+```
 
 ### 9° Desafio) Fazer um merge.
 - Para fazer um merge primeiro iremos, na branch de desenvolvimento, modificar o arquivo de `index.html` adicionando um quarto filme. E então faremos um commit.
@@ -123,11 +127,37 @@ git stash drop <idex_stash>
 - Iremos criar uma tag para a versão atual do projeto.
 - Para isso iremos digitar o comando:
 ```
-git tag -a v0.1.0
+git tag -a v0.1.0 -m "Primeira versão do projeto"
 ```
   - O paramentro `-a` indica que estamos adicioando uma tag.
   - E o `v0.1.0` é o nome da tag.
 - Poedmos vizualizar as tags criadas com o comando:
 ```
 git tag
+```
+- Agora podemos enviar essa tag para o nosso repositório remoto.
+```
+git push origin v0.1.0
+```
+
+### 12° Desafio) Juntar commits.
+- Para isso iremos fazer 3 commits qualquer.
+- Após ter feito esses commits iremos junta-los em um só.
+```
+git rebase -i HEAD~3
+```
+  - O parâmetro `-i` indica que iremos fazer um rebase de forma interativa.
+  - O `HEAD` indica que estamos no código atual, na branch atual.
+  - E o `~3` indica que quremos os 3 últimos commits.
+- Após fazer isso irá aparecer algo como:
+```
+pick <hash_commit1> <message_commit1>
+pick <hash_commit2> <message_commit2>
+pick <hash_commit3> <message_commit3>
+```
+- Para juntar iremos colocar.
+```
+pick <hash_commit1> <message_commit1>
+s <hash_commit2> <message_commit2>
+s <hash_commit3> <message_commit3>
 ```
