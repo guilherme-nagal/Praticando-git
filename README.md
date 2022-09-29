@@ -93,3 +93,41 @@ git merge desenvolvimento
 ```
 - Quando fizermos isso vermos que o código que o código da branch desenvolvimento está na branch main.
 - Por fim basta dar um push.
+
+### 10° Desafio) Fazer um stash.
+- O `stash` serve para salvar o código para depois sem dar um commit, pois um commit só é recomendado dar quando o código está funcionando. Caso não tenha terminado seu código mas precisa parar de trabalhar nele, podemos usar o `stash` para salvar ele para depois.
+- Para isso iremos alterar o arquivo index.html e digitar o comando:
+```
+git stash
+```
+- Dessa forma as modificações feitas serão salvas sem um commit. E caso se queira voltar a trabalhar nesse código podemos ver a lista de stash com o comando:
+```
+git stash list
+```
+- Com essa lista gerada pegaremos o index da stash desejada e digitaremos:
+```
+git stash pop <index_stash>
+```
+  - O `git stash pop` faz com que pegamos a stash informada e apagamos ela da lista de stashs.
+- Caso queiramos apenas pega-la sem apaga-la podemos digitar:
+```
+git stash apply <index_stash>
+```
+- E caso apenas queiramos apaga-la da lista, sem pegar, digitaremos:
+```
+git stash drop <idex_stash>
+```
+
+### 11° Desafio) Criar uma tag.
+- Uma tag serve para marcarmos versões do código.
+- Iremos criar uma tag para a versão atual do projeto.
+- Para isso iremos digitar o comando:
+```
+git tag -a v0.1.0
+```
+  - O paramentro `-a` indica que estamos adicioando uma tag.
+  - E o `v0.1.0` é o nome da tag.
+- Poedmos vizualizar as tags criadas com o comando:
+```
+git tag
+```
